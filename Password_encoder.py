@@ -14,7 +14,20 @@ def encode(unencoded_password):
         encoded_password += str(new_digit)
     return encoded_password
 
-#def decode():
+
+def decode(encoded_passwd):
+    """Decodes password by shifting numbers
+    3 times back"""
+
+    passwd = ''
+
+    for num in encoded_passwd:
+        num = int(num)
+        new_num = (num - 3) % 10
+        passwd += new_num
+
+    return passwd
+
 
 def main():
     while True:
